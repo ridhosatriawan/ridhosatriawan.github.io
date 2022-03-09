@@ -20,8 +20,6 @@
             .switch {
             position: relative;
             display: inline-block;
-            width: 60px;
-            height: 34px;
             }
 
             .switch input { 
@@ -46,8 +44,8 @@
             position: absolute;
             height: 26px;
             width: 26px;
-            left: 4px;
-            bottom: 4px;
+            left: 3px;
+            bottom: 3px;
             background-color: white;
             -webkit-transition: .4s;
             transition: .4s;
@@ -83,11 +81,11 @@
         input:checked + .slider.round:before {
                 text-align : center;
                 position: absolute;
-                right : 4px;
+                left : 2px;
                 font-family : 'Font Awesome 6 Free';
                 content: "\f186";
                 color : #EAB308;
-                bottom: 4px;
+                bottom: 3px;
                 background-color : #0F172A;
             }
 
@@ -121,28 +119,28 @@
 </head>
 
 <body id="root" class="asek">
-    <main class="p-9 dark:bg-slate-900 dark:text-white min-h-screen">
+    <main class="p-4 md:p-9 dark:bg-slate-900 dark:text-white min-h-screen">
         <header class="flex items-center justify-between mb-7">
             <div class="flex items-center">
                 <figure>
-                    <img src="./src/ridho.png" class="w-20 rounded-full bg-yellow-500 mr-2" alt="">
+                    <img src="./src/ridho.png" class="w-16 md:w-20 rounded-full bg-yellow-500 mr-2" alt="">
                 </figure>
                 <div>
-                    <h1 class="font-bold text-4xl">Ridho Satriawan</h1>
-                    <p class="text-lg">Frontend Developer</p>
+                    <h1 class="font-bold text-lg md:text-4xl ">Ridho Satriawan</h1>
+                    <p class="text-sm md:text-lg">Frontend Developer</p>
                 </div>
             </div>
-            <div class="mr-9">
+            <div class="mr-3 md:mr-9">
                 <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                    <label class="switch">
+                    <label class="switch w-14 h-8">
                         <input type="checkbox" id="toggle" onclick="togle()">
                         <span class="slider round"></span>
                     </label>
                 </div>
             </div>
         </header>
-        <section class="flex">
-            <section class="left w-2/6">
+        <section class="flex flex-col md:flex-row md:flex-wrap">
+            <section class="left md:w-3/6 lg:w-2/6">
                 <div class="mb-5">
                     <h2 class="font-bold text-lg underline">DATA DIRI</h2>
                     <h2 class="font-bold">
@@ -183,7 +181,7 @@
                     <p>Ilmu Pengetahuan Alam</p>
                 </div>
             </section>
-            <section class="left w-2/6">
+            <section class="left md:w-3/6 lg:w-2/6">
                 <div class="mb-5">
                     <h2 class="font-bold text-lg underline">KONTAK & SOSIAL</h2>
                     <h2 class="font-bold">
@@ -243,7 +241,7 @@
                     </ul>
                 </div>
             </section>
-            <section class="right w-2/6">
+            <section class="right md:w-2/6">
                 <div class="mb-5">
                     <h2 class="font-bold text-lg underline">PENGALAMAN</h2>
                     <h2 class="font-bold">
@@ -259,6 +257,8 @@
                         <li>HTML, CSS, JavaScript</li>
                         <li>ReactJS</li>
                         <li>NextJS</li>
+                        <li>Tailwind CSS</li>
+                        <li>Bootstrap</li>
                         <li>Figma</li>
                     </ul>
                 </div>
