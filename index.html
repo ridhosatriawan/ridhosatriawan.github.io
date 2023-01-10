@@ -1,276 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ridho Satriawan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: "class"
-        }
+      tailwind.config = {
+        darkMode: "class",
+      };
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style type="text/tailwindcss">
-        @layer utilities {
-            .switch {
-            position: relative;
-            display: inline-block;
-            }
-
-            .switch input { 
-            opacity: 0;
-            width: 0;
-            height: 0;
-            }
-
-            .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #0F172A;
-            -webkit-transition: .4s;
-            transition: .4s;
-            }
-
-            .slider:before {
-            position: absolute;
-            height: 26px;
-            width: 26px;
-            left: 3px;
-            bottom: 3px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-            }
-
-            input:checked + .slider {
-            background-color: #EAB308;
-            }
-
-            input:focus + .slider {
-            box-shadow: 0 0 1px #2196F3;
-            }
-
-            input:checked + .slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
-            }
-
-            /* Rounded sliders */
-            .slider.round {
-            border-radius: 34px;
-            }
-
-            .slider.round:before {
-            border-radius: 50%;
-            font-family : 'Font Awesome 6 Free';
-            content: "\f185";
-            color : #0F172A;
-            text-align : center;
+      @layer utilities {
+        .switch {
+          position: relative;
+          display: inline-block;
         }
-        
+
+        .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #0f172a;
+          -webkit-transition: 0.4s;
+          transition: 0.4s;
+        }
+
+        .slider:before {
+          position: absolute;
+          height: 26px;
+          width: 26px;
+          left: 3px;
+          bottom: 3px;
+          background-color: white;
+          -webkit-transition: 0.4s;
+          transition: 0.4s;
+        }
+
+        input:checked + .slider {
+          background-color: #eab308;
+        }
+
+        input:focus + .slider {
+          box-shadow: 0 0 1px #2196f3;
+        }
+
+        input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+        }
+
+        .slider.round:before {
+          border-radius: 50%;
+          font-family: "Font Awesome 6 Free";
+          content: "\f185";
+          color: #0f172a;
+          text-align: center;
+        }
+
         input:checked + .slider.round:before {
-                text-align : center;
-                position: absolute;
-                left : 2px;
-                font-family : 'Font Awesome 6 Free';
-                content: "\f186";
-                color : #EAB308;
-                bottom: 3px;
-                background-color : #0F172A;
-            }
-
+          text-align: center;
+          position: absolute;
+          left: 2px;
+          font-family: "Font Awesome 6 Free";
+          content: "\f186";
+          color: #eab308;
+          bottom: 3px;
+          background-color: #0f172a;
         }
+      }
     </style>
     <script>
-        window.onload = function asek() {
-            let body = document.getElementById('root');
-            let theme = document.cookie.split('=');
-            if (theme[1] === 'dark') {
-                body.classList.add('dark')
-                document.getElementById("toggle").checked = true;
-            } else {
-                document.getElementById("toggle").checked = false;
-            }
+      window.onload = function asek() {
+        let body = document.getElementById("root");
+        let theme = document.cookie.split("=");
+        if (theme[1] === "dark") {
+          body.classList.add("dark");
+          document.getElementById("toggle").checked = true;
+        } else {
+          document.getElementById("toggle").checked = false;
         }
-        function togle() {
-            let checkbox = document.getElementById('toggle').checked;
+      };
+      function togle() {
+        let checkbox = document.getElementById("toggle").checked;
 
-            let body = document.getElementById('root');
+        let body = document.getElementById("root");
 
-            if (checkbox) {
-                body.classList.add('dark')
-                document.cookie = "theme=dark"
-            } else {
-                body.classList.remove('dark')
-                document.cookie = "theme=light"
-            }
+        if (checkbox) {
+          body.classList.add("dark");
+          document.cookie = "theme=dark";
+        } else {
+          body.classList.remove("dark");
+          document.cookie = "theme=light";
         }
+      }
     </script>
-</head>
+  </head>
 
-<body id="root" class="asek">
+  <body id="root" class="asek">
     <main class="p-4 md:p-9 dark:bg-slate-900 dark:text-white min-h-screen">
-        <header class="flex items-center justify-between mb-7">
-            <div class="flex items-center">
-                <figure>
-                    <img src="./src/ridho.png" class="w-16 md:w-20 rounded-full bg-yellow-500 mr-2" alt="">
-                </figure>
-                <div>
-                    <h1 class="font-bold text-lg md:text-4xl ">Ridho Satriawan</h1>
-                    <p class="text-sm md:text-lg">Frontend Developer</p>
-                </div>
-            </div>
-            <div class="mr-3 md:mr-9">
-                <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                    <label class="switch w-14 h-8">
-                        <input type="checkbox" id="toggle" onclick="togle()">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-            </div>
-        </header>
-        <section class="flex flex-col md:flex-row md:flex-wrap">
-            <section class="left md:w-3/6 lg:w-2/6">
-                <div class="mb-5">
-                    <h2 class="font-bold text-lg underline">DATA DIRI</h2>
-                    <h2 class="font-bold">
-                        Nama
-                    </h2>
-                    <p>Ridho Satriawan</p>
-                    <h2 class="font-bold mt-2">
-                        Tempat, Tanggal Lahir
-                    </h2>
-                    <p>Banyuwangi, 28 Juni 2000</p>
-                    <h2 class="font-bold mt-2">
-                        Warga Negara
-                    </h2>
-                    <p>Indonesia</p>
-                    <h2 class="font-bold mt-2">
-                        Alamat
-                    </h2>
-                    <p>Gambiran, Banyuwangi</p>
-                    <h2 class="font-bold mt-2">
-                        Status
-                    </h2>
-                    <p>
-                        Belum Menikah
-                    </p>
-                </div>
+      <header class="flex items-center justify-between mb-7">
+        <div class="flex items-center">
+          <figure>
+            <img
+              src="./src/ridho.png"
+              class="w-16 md:w-20 rounded-full bg-yellow-500 mr-2"
+              alt=""
+            />
+          </figure>
+          <div>
+            <h1 class="font-bold text-lg md:text-4xl">Ridho Satriawan</h1>
+            <p class="text-sm md:text-lg">Frontend Developer</p>
+          </div>
+        </div>
+        <div class="mr-3 md:mr-9">
+          <div
+            class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
+          >
+            <label class="switch w-14 h-8">
+              <input type="checkbox" id="toggle" onclick="togle()" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </header>
+      <section class="flex flex-col md:flex-row md:flex-wrap">
+        <section class="left md:w-3/6 lg:w-2/6">
+          <div class="mb-5">
+            <h2 class="font-bold text-lg underline">DATA DIRI</h2>
+            <h2 class="font-bold">Nama</h2>
+            <p>Ridho Satriawan</p>
+            <h2 class="font-bold mt-2">Tempat, Tanggal Lahir</h2>
+            <p>Banyuwangi, 28 Juni 2000</p>
+            <h2 class="font-bold mt-2">Warga Negara</h2>
+            <p>Indonesia</p>
+            <h2 class="font-bold mt-2">Alamat</h2>
+            <p>Gambiran, Banyuwangi</p>
+            <h2 class="font-bold mt-2">Status</h2>
+            <p>Belum Menikah</p>
+          </div>
 
-                <div class="mb-5">
-                    <h2 class="font-bold text-lg underline">PENDIDIKAN</h2>
-                    <h2 class="font-bold">
-                        Stikom PGRI Banyuwangi
-                        <span class="font-normal ml-2">(2018 - 2022)</span>
-                    </h2>
-                    <p>Teknik Informatika</p>
-                    <h2 class="font-bold">
-                        MAN 2 Banyuwangi
-                        <span class="font-normal ml-2">(2015 - 2018)</span>
-                    </h2>
-                    <p>Ilmu Pengetahuan Alam</p>
-                </div>
-            </section>
-            <section class="left md:w-3/6 lg:w-2/6">
-                <div class="mb-5">
-                    <h2 class="font-bold text-lg underline">KONTAK & SOSIAL</h2>
-                    <h2 class="font-bold">
-                        <span class="mr-1">
-                            <i class="fa-regular fa-envelope"></i>
-                        </span>
-                        Email
-                    </h2>
-                    <p>ridhosatriawan321@gmail.com</p>
-                    <h2 class="font-bold mt-2">
-                        <span class="mr-1">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </span>
-                        Phone / Whatsapp
-                    </h2>
-                    <p>+62895369737755</p>
-                    <h2 class="font-bold mt-2">
-                        <span class="mr-1">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </span>
-                        LinkedIn
-                    </h2>
-                    <p>Ridho Satriawan</p>
-                    <h2 class="font-bold mt-2">
-                        <span class="mr-1">
-                            <i class="fa-brands fa-github"></i>
-                        </span>
-                        Github
-                    </h2>
-                    <p>github.com/ridhosatriawan
-                        <span class="ml-1">
-                            <a href="https://github.com/ridhosatriawan" target="_blank">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </span>
-                    </p>
-                    <h2 class="font-bold mt-2">
-                        <span class="mr-1">
-                            <i class="fa-brands fa-github"></i>
-                        </span>
-                        Portofolio
-                    </h2>
-                    <p>ridhosatriawan.github.io/portofolio
-                        <span class="ml-1">
-                            <a href="https://ridhosatriawan.github.io/portofolio" target="_blank">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </span>
-                    </p>
-                </div>
-                <div class="mb-5">
-                    <h2 class="font-bold text-lg underline">BAHASA</h2>
-                    <ul>
-                        <li>Indonesia</li>
-                        <li>Inggris</li>
-                        <li>Jawa</li>
-                    </ul>
-                </div>
-            </section>
-            <section class="right md:w-2/6">
-                <div class="mb-5">
-                    <h2 class="font-bold text-lg underline">PENGALAMAN</h2>
-                    <h2 class="font-bold">
-                        Wlijo
-                        <span class="font-normal ml-2">(2021)</span>
-                    </h2>
-                    <p>Ikut dalam mendesain dan membangun web aplikasi penjualan sayur menggunakan framework NextJs .
-                    </p>
-                </div>
-                <div class="mb-5">
-                    <h2 class="font-bold text-lg underline">KEAHLIAN</h2>
-                    <ul>
-                        <li>HTML, CSS, JavaScript</li>
-                        <li>ReactJS</li>
-                        <li>NextJS</li>
-                        <li>Tailwind CSS</li>
-                        <li>Bootstrap</li>
-                        <li>Figma</li>
-                    </ul>
-                </div>
-                <div class="mb-5">
-                    <h2 class="font-bold text-lg underline">ORGANISASI</h2>
-                    <ul>
-                        <li>KLOSO</li>
-                    </ul>
-                </div>
-            </section>
+          <div class="mb-5">
+            <h2 class="font-bold text-lg underline">PENDIDIKAN</h2>
+            <h2 class="font-bold">
+              Stikom PGRI Banyuwangi
+              <span class="font-normal ml-2">(2018 - 2022)</span>
+            </h2>
+            <p>Teknik Informatika</p>
+            <h2 class="font-bold">
+              MAN 2 Banyuwangi
+              <span class="font-normal ml-2">(2015 - 2018)</span>
+            </h2>
+            <p>Ilmu Pengetahuan Alam</p>
+          </div>
         </section>
+        <section class="left md:w-3/6 lg:w-2/6">
+          <div class="mb-5">
+            <h2 class="font-bold text-lg underline">KONTAK & SOSIAL</h2>
+            <h2 class="font-bold">
+              <span class="mr-1">
+                <i class="fa-regular fa-envelope"></i>
+              </span>
+              Email
+            </h2>
+            <p>ridhosatriawan321@gmail.com</p>
+            <h2 class="font-bold mt-2">
+              <span class="mr-1">
+                <i class="fa-brands fa-whatsapp"></i>
+              </span>
+              Phone / Whatsapp
+            </h2>
+            <p>+62895369737755</p>
+            <h2 class="font-bold mt-2">
+              <span class="mr-1">
+                <i class="fa-brands fa-linkedin"></i>
+              </span>
+              LinkedIn
+            </h2>
+            <p>Ridho Satriawan</p>
+            <h2 class="font-bold mt-2">
+              <span class="mr-1">
+                <i class="fa-brands fa-github"></i>
+              </span>
+              Github
+            </h2>
+            <p>
+              github.com/ridhosatriawan
+              <span class="ml-1">
+                <a href="https://github.com/ridhosatriawan" target="_blank">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </span>
+            </p>
+            <h2 class="font-bold mt-2">
+              <span class="mr-1">
+                <i class="fa-brands fa-github"></i>
+              </span>
+              Portofolio
+            </h2>
+            <p>
+              ridhosatriawan.github.io/portofolio
+              <span class="ml-1">
+                <a
+                  href="https://ridhosatriawan.github.io/portofolio"
+                  target="_blank"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </span>
+            </p>
+          </div>
+          <div class="mb-5">
+            <h2 class="font-bold text-lg underline">BAHASA</h2>
+            <ul>
+              <li>Indonesia</li>
+              <li>Inggris</li>
+              <li>Jawa</li>
+            </ul>
+          </div>
+        </section>
+        <section class="right md:w-2/6">
+          <div class="mb-5">
+            <h2 class="font-bold text-lg underline">Projek</h2>
+            <h2 class="font-bold">
+              Umkm Katalog
+              <span class="font-normal ml-2">(2022)</span>
+            </h2>
+            <p>Web katalog Umkm</p>
+            <h2 class="font-bold">
+              Ezsave
+              <span class="font-normal ml-2">(2022)</span>
+            </h2>
+            <p>Web social media video downloader</p>
+            <h2 class="font-bold">
+              Wlijo
+              <span class="font-normal ml-2">(2021)</span>
+            </h2>
+            <p>
+              Ikut dalam mendesain dan membangun web aplikasi penjualan sayur
+              menggunakan framework NextJs .
+            </p>
+          </div>
+          <div class="mb-5">
+            <h2 class="font-bold text-lg underline">KEAHLIAN</h2>
+            <ul>
+              <li>HTML, CSS, JavaScript</li>
+              <li>ReactJS</li>
+              <li>NextJS</li>
+              <li>Tailwind CSS</li>
+              <li>Bootstrap</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+          <div class="mb-5">
+            <h2 class="font-bold text-lg underline">ORGANISASI</h2>
+            <ul>
+              <li>KLOSO</li>
+            </ul>
+          </div>
+        </section>
+      </section>
     </main>
-</body>
-
+  </body>
 </html>
